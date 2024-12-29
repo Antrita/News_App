@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-off-white: #f9f4ed;
+  --color-light-gray: #eaeaea;
+  --color-terra-cotta: #af695c;
+  --color-charcoal: #2a2a2a;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-off-white);
+  color: var(--color-charcoal);
+}
+@layer components {
+  .news-heading {
+    @apply font-poppins font-semibold text-charcoal;
+  }
+  
+  .news-card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02];
+  }
+
+  .category-badge {
+    @apply bg-terra-cotta text-white px-3 py-1 rounded-full text-sm;
+  }
+
+  .btn-primary {
+    @apply bg-terra-cotta text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-300;
+  }
+}

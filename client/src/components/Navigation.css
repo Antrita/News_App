@@ -1,0 +1,67 @@
+/* Navigation.css */
+
+.custom-navbar {
+  background-color: var(--color-charcoal);
+  padding: 1rem 0;
+}
+
+/* Brand text styling */
+.brand-text {
+  color: var(--color-white) !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation links styling */
+.nav-link {
+  color: var(--color-white) !important;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-terra-cotta) !important;
+}
+
+.nav-link.active {
+  color: var(--color-terra-cotta) !important;
+}
+
+/* Custom toggler for mobile */
+.custom-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/* Theme switch styling */
+.theme-switch {
+  --bs-form-switch-bg: var(--color-terra-cotta);
+}
+
+.theme-switch .form-check-input {
+  background-color: var(--color-charcoal);
+  border-color: var(--color-terra-cotta);
+  cursor: pointer;
+}
+
+.theme-switch .form-check-input:checked {
+  background-color: var(--color-terra-cotta);
+  border-color: var(--color-terra-cotta);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .nav-link {
+    padding: 0.5rem 0 !important;
+    margin: 0.25rem 0;
+  }
+  
+  .theme-switch {
+    margin: 1rem 0;
+  }
+}
