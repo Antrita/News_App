@@ -1,13 +1,31 @@
 # News Website
 
-A modern news aggregation platform built with the MERN stack (MongoDB, Express.js, React, Node.js) that provides real-time news updates using TheNewsAPI.
+A modern full-stack news application built with React, Express.js, and MongoDB, featuring category-based news organization and real-time updates.
 
-## Features
+## Project Overview
 
-- Real-time news updates
-- Category-based filtering
-- Responsive design
-- Personalized news preferences
+### Client-Side Development (React)
+- Built with React, offering a dynamic and interactive user interface
+- Category-based news browsing (Sports, Entertainment, Technology. Headlines)
+- Responsive design with Tailwind CSS
+- Dark/Light mode theming
+- Real-time news updates and infinite scrolling
+
+### Server-Side Development (Express & MongoDB)
+- Express.js backend with structured API routes
+- MongoDB for efficient data storage and retrieval
+- User authentication and authorization
+- Category-based news caching
+- Error handling and logging
+
+### Key Features
+- Categorized news browsing
+- User authentication and profile management
+- Saved articles functionality
+- Search across categories
+- Mobile-responsive design
+- Performance optimized with caching
+- API rate limiting and security measures
 
 ## Tech Stack
 
@@ -15,126 +33,94 @@ A modern news aggregation platform built with the MERN stack (MongoDB, Express.j
 - React.js
 - React Router for navigation
 - Context API for state management
-- Tailwind CSS & Bootstrap for styling
+- Tailwind CSS for styling
+- Axios for API requests
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB for database
+- Node.js & Express.js
+- MongoDB & Mongoose
 - JWT for authentication
+- Bcrypt for password hashing
 
-### External API
-- TheNewsAPI for news content
+## Getting Started
 
-## Project Structure
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB
+- Git
 
-```
-news-website/
-├── client/                # React frontend
-│   ├── public/
-│   └── src/
-│       ├── components/
-│       ├── context/
-│       ├── pages/
-│       └── services/
-└── server/                # Express backend
-    ├── config/
-    ├── controllers/
-    ├── middleware/
-    ├── routes/
-    └── models/
-```
-
-## API Endpoints
-
-### News Routes
-```
-GET /api/news/top          # Get top stories
-GET /api/news/category/:category  # Get news by category
-GET /api/news/search?q=:query    # Search news articles
-GET /api/news/article/:uuid      # Get single article
-```
-
-### User Routes
-```
-POST /api/users/register   # Register new user
-POST /api/users/login      # User login
-GET /api/users/profile     # Get user profile
-PUT /api/users/preferences # Update news preferences
-```
-
-## Setup Instructions
+### Installation
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Antrita/news-website.git
+git clone https://github.com/Antrita/News_App.git
 cd news-website
 ```
 
-2. Install dependencies
+2. Install server dependencies
 ```bash
-# Install frontend dependencies
-cd client
-npm install
-
-# Install backend dependencies
-cd ../server
+cd server
 npm install
 ```
 
-3. Environment Variables
-
-Create .env files in both client and server directories:
-
-Frontend (.env in client folder):
-```
-REACT_APP_API_URL=http://localhost:5000/api
-REACT_APP_NEWS_API_KEY=your_api_key_here
+3. Install client dependencies
+```bash
+cd ../client
+npm install
 ```
 
-Backend (.env in server folder):
-```
+4. Environment Setup
+   
+Server (.env):
+```env
 PORT=5000
-MONGODB_URI=your_mongodb_uri
-NEWS_API_KEY=your_api_key_here
+MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+NODE_ENV=development
 ```
 
-4. Start the application
+Client (.env):
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+```
+
+### Running the Application
+
+Start backend:
 ```bash
-# Start backend server
 cd server
 npm run dev
+```
 
-# Start frontend in a new terminal
+Start frontend:
+```bash
 cd client
 npm start
 ```
 
-The application will be available at `http://localhost:3000`
-
-## Available Scripts
-
-In the client directory:
-```bash
-npm start    # Start development server
-npm test     # Run tests
-npm run build    # Build for production
+## Project Structure
+```
+news-website/
+├── client/                # React frontend
+│   ├── src/
+│   │   ├── components/   # Reusable components
+│   │   ├── context/      # Context providers
+│   │   ├── pages/        # Page components
+│   │   ├── services/     # API services
+│   │   └── styles/       # Global styles
+│   └── package.json
+└── server/               # Express backend
+    ├── src/
+    │   ├── config/       # Configuration files
+    │   ├── controllers/  # Route controllers
+    │   ├── middleware/   # Custom middleware
+    │   ├── models/       # MongoDB models
+    │   ├── routes/       # API routes
+    │   └── utils/        # Utility functions
+    └── package.json
 ```
 
-In the server directory:
-```bash
-npm run dev      # Start development server
-npm run start    # Start production server
-```
 
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- [TheNewsAPI](https://www.thenewsapi.com/) for providing news data
-- [React Documentation](https://reactjs.org/)
-- [Express.js Documentation](https://expressjs.com/)
+This project is licensed under the MIT License
