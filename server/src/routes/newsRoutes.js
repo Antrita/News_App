@@ -4,9 +4,16 @@ const newsController = require('../controllers/newsController');
 const cacheMiddleware = require('../middleware/cache');
 const config = require('../config/config');
 
-router.get('/top', cacheMiddleware(config.cacheTimeout), newsController.getTopStories);
-router.get('/category/:category', cacheMiddleware(config.cacheTimeout), newsController.getNewsByCategory);
-router.get('/article/:uuid', cacheMiddleware(config.cacheTimeout), newsController.getArticle);
+// Top Headlines
+router.get('/', cacheMiddleware(config.cacheTimeout), newsController.getTopStories);
+
+// Category-specific News (with validated categories)
+router.get('/category/:category', 
+  cacheMiddleware(config.cacheTimeout), 
+  newsController.getNewsByCategory
+);
+
+// Search Articles
 router.get('/search', newsController.searchArticles);
 
 module.exports = router;

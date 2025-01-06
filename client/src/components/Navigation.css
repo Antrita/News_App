@@ -1,52 +1,76 @@
-/* Navigation.css */
 
 .custom-navbar {
   background-color: var(--color-charcoal);
   padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Brand text styling */
 .brand-text {
-  color: var(--color-white) !important;
+  color: rgb(255, 255, 255) !important;  /* Ensures the text is white */
   font-size: 1.5rem;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation links styling */
 .nav-link {
-  color: var(--color-white) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-family: 'Poppins', sans-serif;
   padding: 0.5rem 1rem !important;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
 }
 
 .nav-link:hover {
   color: var(--color-terra-cotta) !important;
+  transform: translateY(-1px);
 }
 
 .nav-link.active {
   color: var(--color-terra-cotta) !important;
 }
 
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-terra-cotta);
+}
+
+/* Nav container spacing */
+.nav-container {
+  padding: 0 2rem;
+}
+
 /* Custom toggler for mobile */
 .custom-toggler {
-  border-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.25rem !important;
 }
 
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
 }
 
 /* Theme switch styling */
 .theme-switch {
   --bs-form-switch-bg: var(--color-terra-cotta);
+  margin-left: 1.5rem;
 }
 
 .theme-switch .form-check-input {
   background-color: var(--color-charcoal);
   border-color: var(--color-terra-cotta);
   cursor: pointer;
+  width: 3rem;
+  height: 1.5rem;
 }
 
 .theme-switch .form-check-input:checked {
@@ -57,11 +81,21 @@
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .nav-link {
-    padding: 0.5rem 0 !important;
+    padding: 0.75rem 0 !important;
     margin: 0.25rem 0;
+    font-size: 1.1rem;
   }
   
   .theme-switch {
     margin: 1rem 0;
+    margin-left: 0;
+  }
+
+  .navbar-collapse {
+    background-color: var(--color-charcoal);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
